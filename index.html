@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>해킹됨!!</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+
+<body>
+  <h1></h1>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const userAgent = navigator.userAgent;
+      console.log("User-Agent 정보:", userAgent);
+
+      // 화면에 표시
+      document.body.innerHTML = `<h1>당신애 ${userAgent}이 해킹당헷습니다!!</h1>`;
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      console.log("여기까진 되나?");
+      // 전체화면 요청
+      if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+      } else if (document.documentElement.webkitRequestFullscreen) { // Safari 지원
+        document.documentElement.webkitRequestFullscreen();
+      } else if (document.documentElement.msRequestFullscreen) { // IE11 지원
+        document.documentElement.msRequestFullscreen();
+      } else {
+        console.warn("전체화면 API가 지원되지 않습니다.");
+      }
+    });
+  </script>
+</body>
+
+</html>
